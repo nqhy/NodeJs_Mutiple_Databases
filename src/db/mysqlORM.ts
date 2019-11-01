@@ -8,7 +8,7 @@ export default class MysqlORM {
   static async connect() {
     try {
       const connection = await createConnection(
-        mysqlConfig[process.env.NODE_ENV || 'development'],
+        mysqlConfig[process.env.NODE_ENV || 'devlopment'],
       );
       logger({ type: 'Notify', message: 'Connected To MySQL' });
     } catch (err) {
