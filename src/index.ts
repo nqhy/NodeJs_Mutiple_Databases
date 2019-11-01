@@ -1,11 +1,11 @@
-import app from './App';
 import * as bodyParser from 'body-parser';
 import * as cookieParser from 'cookie-parser';
 import * as cors from 'cors';
 
+import app from './App';
 import logger from './utils/logger';
 import { v1API } from './services/api';
-import connectDb from './db';
+import { MongoORM, MySQLORM } from './db';
 import Redis from './services/redis';
 import { authRouter } from './routes';
 import { AuthorizationMiddleware } from './middlewares';
@@ -39,8 +39,10 @@ server.use(
 );
 
 app.setStatic('public');
+
 // DB Listening
-connectDb;
+MongoORM.connect();
+MySQLORM.connect();
 
 /**
  * Router

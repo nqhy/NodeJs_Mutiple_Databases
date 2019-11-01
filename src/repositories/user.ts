@@ -1,7 +1,7 @@
 import { UserModel } from '../models';
-import BaseRepository from './base';
+import BaseMongooseRepository from './baseMongoose';
 
-export default class UserRepository extends BaseRepository {
+export default class UserRepository extends BaseMongooseRepository {
   constructor() {
     super(UserModel);
   }

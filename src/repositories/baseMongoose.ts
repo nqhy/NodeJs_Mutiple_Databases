@@ -2,7 +2,7 @@ import { Model } from 'mongoose';
 
 import { OptionsBase } from './types';
 
-export default class BaseRepository {
+export default class BaseMongooseRepository {
   private model;
 
   constructor(model: Model<any>) {
